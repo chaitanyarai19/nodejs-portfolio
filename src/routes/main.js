@@ -1,12 +1,22 @@
 const express = require('express');
 const routes = express.Router();
 
-routes.get("/", (req,res)=>{
-    res.render("index");
+const Details = require('../models/details');
+
+routes.get("/", async (req,res)=>{
+   const details = await Details.findOne({"_id":"65be888cfd6c04dca1a760c3"})
+   //console.log(details);
+    res.render("index", {
+        details : details
+    });
 })
 
-routes.get("/gallery", (req,res)=>{
-    res.render("gallery");
+routes.get("/gallery", async (req,res)=>{
+    const details = await Details.findOne({"_id":"65be888cfd6c04dca1a760c3"})
+    //console.log(details);
+     res.render("gallery", {
+         details : details
+     });
 })
 
 

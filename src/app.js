@@ -3,11 +3,47 @@ const hbs = require('hbs');
 const app = express();
 const routes = require('./routes/main');
 const mongoose = require('mongoose');
+const details = require('./models/details');
 
 mongoose.connect("mongodb://localhost/nodejs_portfolio")
     .then(()=>{
         console.log("Database Connected");
-    })
+
+        // details.create({
+        //     brandName:'Portfolio',
+        //     brandIconUrl : 'https://tioitservices.bloodanytime.com/assets/img/favicon.png',
+        //     links: [
+        //         {
+        //         label: "Home",
+        //         url:"/"
+        //         },
+        //         {
+        //             label: "gallery",
+        //             url:'/gallery'
+        //         },
+        //         {
+        //             label:"about",
+        //             url:'/about'
+        //         },
+        //     ],
+
+        //     dropdownLabel:"Services",
+        //         dropdown:[
+        //             {
+        //                 label:"Website Development",
+        //                 url:"#"
+        //             },
+        //             {
+        //                 label:"Graphic Designing",
+        //                 url:"#"
+        //             },
+        //             {
+        //                 label:"College Projects",
+        //                 url:"#"
+        //             },
+        //         ]
+        // });
+     })
     .catch((error)=>{
         console.log("Error Connecting to Database");
     })
