@@ -4,10 +4,23 @@ const app = express();
 const routes = require('./routes/main');
 const mongoose = require('mongoose');
 const details = require('./models/details');
+const slider = require('./models/slider');
 
 mongoose.connect("mongodb://localhost/nodejs_portfolio")
     .then(()=>{
         console.log("Database Connected");
+
+        // slider.create([
+        //     {
+        //         ImageUrl:'images/slider1.jpg'
+        //     },
+        //     {
+        //         ImageUrl:'images/slider2.jpg'
+        //     },
+        //     {
+        //         ImageUrl:'images/slider3.jpg'
+        //     },
+        // ]);
 
         // details.create({
         //     brandName:'Portfolio',
