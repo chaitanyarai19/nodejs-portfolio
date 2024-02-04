@@ -4,6 +4,8 @@ const routes = express.Router();
 const Details = require('../models/details');
 const Slider = require('../models/slider');
 const Service = require('../models/service');
+const Contact = require('../models/contact');
+
 
 routes.get("/", async (req,res)=>{
    const details = await Details.findOne({"_id":"65be888cfd6c04dca1a760c3"})
@@ -23,6 +25,17 @@ routes.get("/gallery", async (req,res)=>{
      res.render("gallery", {
          details : details
      });
+})
+
+routes.post("/contact-form", async (req,res)=>{
+  try{
+    const data= await Contact.create(req.body)
+    console.log(data)
+    res.redirect("/")
+  }catch(e){
+    console.log(e)
+    res.redirect("/")
+  }
 })
 
 

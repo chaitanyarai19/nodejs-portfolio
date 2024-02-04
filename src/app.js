@@ -3,6 +3,7 @@ const hbs = require('hbs');
 const app = express();
 const routes = require('./routes/main');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 const details = require('./models/details');
 const slider = require('./models/slider');
 const Services = require('./models/service');
@@ -101,8 +102,12 @@ mongoose.connect("mongodb://localhost/nodejs_portfolio")
         console.log("Error Connecting to Database");
     })
 
+app.use(bodyParser.urlencoded({
+        extended:true
+}))
 app.use(express.static("public")); 
 app.use('',routes);
+
 
 //template engine
 
