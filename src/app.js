@@ -5,11 +5,51 @@ const routes = require('./routes/main');
 const mongoose = require('mongoose');
 const details = require('./models/details');
 const slider = require('./models/slider');
+const Services = require('./models/service');
 
 mongoose.connect("mongodb://localhost/nodejs_portfolio")
     .then(()=>{
         console.log("Database Connected");
 
+    //     Services.create([
+    //         {
+    //         icon: 'fa-solid fa-code',
+    //         title:'Website Development',
+    //         linktext: 'View More',
+    //         linkurl: '#'
+    //     },
+    //     {
+    //         icon: 'fa-solid fa-code',
+    //         title:'App Development',
+    //         linktext: 'View More',
+    //         linkurl: '#'
+    //     },
+    //     {
+    //         icon: 'fa-solid fa-code',
+    //         title:'College Projects',
+    //         linktext: 'View More',
+    //         linkurl: '#'
+    //     },
+    //     {
+    //         icon: 'fa-solid fa-code',
+    //         title:'Graphics Designing',
+    //         linktext: 'View More',
+    //         linkurl: '#'
+    //     },
+    //     {
+    //         icon: 'fa-solid fa-code',
+    //         title:'IOT Projects',
+    //         linktext: 'View More',
+    //         linkurl: '#'
+    //     },
+    //     {
+    //         icon: 'fa-solid fa-code',
+    //         title:'SEO Optimization',
+    //         linktext: 'View More',
+    //         linkurl: '#'
+    //     }
+
+    // ]);
         // slider.create([
         //     {
         //         ImageUrl:'images/slider1.jpg'
