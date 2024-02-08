@@ -137,6 +137,12 @@ app.use(express.static("public"));
 app.use('',routes);
 
 
+// Define a custom helper to get the current year
+hbs.registerHelper('getCurrentYear', () => {
+    return new Date().getFullYear();
+});
+
+
 //template engine
 
 app.set('view engine','hbs');
