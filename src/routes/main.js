@@ -29,6 +29,13 @@ routes.get("/gallery", async (req,res)=>{
      });
 })
 
+routes.get("/about", async (req,res)=>{
+  const details = await Details.findOne({"_id":"65be888cfd6c04dca1a760c3"})
+   res.render("about", {
+       details : details,
+   });
+})
+
 routes.post("/contact-form", async (req,res)=>{
   try{
     const data= await Contact.create(req.body)
